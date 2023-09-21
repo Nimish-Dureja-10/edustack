@@ -12,13 +12,13 @@ const Footer = () => {
                 <Heading children='@Nimish Dureja ' color='yellow.400' fontFamily={'body'} size='sm'/>
             </VStack>
             <HStack spacing={['2','10']} justifyContent='center' color={'white'} fontSize='50'>
-                <a href='https://www.linkedin.com/in/nimish-dureja-9b7150221/' target={'_blank'}>
+                <a href='https://www.linkedin.com/in/nimish-dureja-9b7150221/' target={'blank'}>
                     <TiSocialLinkedinCircular />
                 </a>
-                <a href='https://www.instagram.com/nimishdureja/' target={'_blank'}>
+                <a href='https://www.instagram.com/nimishdureja/' target={'blank'}>
                     <TiSocialInstagramCircular />
                 </a>
-                <a href='https://github.com/Nimish-Dureja-10' target={'_blank'}>
+                <a href='https://github.com/Nimish-Dureja-10' target={'blank'}>
                     <DiGithub />
                 </a>
             </HStack>
