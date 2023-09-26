@@ -41,7 +41,7 @@ const CoursePage = () => {
     ];
 
   return (
-    <Grid minH='90vh' templateColumns={['1fr','3fr 1fr']}>
+    <Grid minH='90vh' px={['4','20']} py={'8'} mt={['16']} templateColumns={['1fr','3fr 1fr']}>
         <Box>
             <video width='100%' autoplay controls src={introVideo}
             controlsList='nodownload noremoteplayback'
