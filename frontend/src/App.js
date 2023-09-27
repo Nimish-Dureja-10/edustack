@@ -15,7 +15,9 @@ import PageNotFound from './components/Layout/NotFound/PageNotFound';
 import PaymentFail from './components/Payments/PaymentFail';
 import PaymentSuccess from './components/Payments/PaymentSuccess';
 import Subscribe from './components/Payments/Subscribe';
+import ChangePassword from './components/Profile/ChangePassword';
 import Profile from './components/Profile/Profile';
+import UpdateProfile from './components/Profile/UpdateProfile';
 import Request from './components/Request/Request';
 
 function App() {
@@ -40,6 +42,8 @@ function App() {
           <Route path='/paymentsuccess' element={<PaymentSuccess />} />
           <Route path='/paymentfail' element={<PaymentFail />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/updateprofile' element={<UpdateProfile />} />
+          <Route path='/changepassword' element={<ChangePassword />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       <Footer />
