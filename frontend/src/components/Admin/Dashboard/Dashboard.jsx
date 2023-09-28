@@ -3,6 +3,7 @@ import React from 'react'
 import { RiArrowDownLine, RiArrowUpLine } from 'react-icons/ri'
 import cursor from '../../../assets/images/cursor2.png'
 import Sidebar from '../Sidebar'
+import { LineChart,DoughnutChart } from './Chart'
 
 const Databox = ({title,qty,qtyPercentage,profit}) => (
     <Box width={['full','20%']} boxShadow={'-2px 0 10px rgba(107,70,193,0.5)'} p='8' borderRadius={'lg'} >
@@ -42,6 +43,7 @@ const Dashboard = () => {
             </Stack>
             <Box m={['0','16']} borderRadius='lg' p={['0','16']} mt={['4','16']} boxShadow={'-2px 0 10px rgba(107,70,193,0.5)'} >
                 <Heading textAlign={['center','left']} size='md' children='Views Graph' pt={['8','0']} ml={['0.5','16']} />
+                <LineChart />
             </Box>
             <Grid templateColumns={['1fr', '2fr 1fr']}>
                 <Box p='4'>
@@ -54,6 +56,7 @@ const Dashboard = () => {
                 </Box>
                 <Box p={['0','16']} boxSizing='border-box' py='4'>
                     <Heading textAlign={'center'} size='md' mb='4' children='Users' />
+                    <DoughnutChart />
                 </Box>
             </Grid>
         </Box>
