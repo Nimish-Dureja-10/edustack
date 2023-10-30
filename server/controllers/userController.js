@@ -22,6 +22,26 @@ export const register = catchAsynError(async (req,res,next)=>{
     sendToken(res,user,"Register Successfully",201)
 });
 
-export const login = catchAsynError(async (req,res,next)=> {
+export const login = catchAsynError(async (req,res,next)=>{
+    const {email,password} = req.body;
+    // const file = req.file
+    if(!email || !password) return next(new ErrorHandler("Please Enter All Fields",400));
+    const user = await User.findOne({email}).select("+password");
+    if(!user) return next(new ErrorHandler("Incorrect Email or Password",401));
+    //upload file on cloudinary
+    const isMatch = await user.comparePassword(password);
+    if(!isMatch) return next(new ErrorHandler("Incorrect Email or Password",401));
+    sendToken(res,user,`Welcome back, ${user.name}`,200)
+});
 
+export const logout = catchAsynError(async (req,res,next)=>{
+    res.status(200).cookie("token",null,{
+        expires : new Date(Date.now()),
+        httpOnly : true,
+        // secure:true,
+        sameSite : "none"
+    }).json({
+        success:true,
+        message: "Logged Out Successfully"
+    });
 });
